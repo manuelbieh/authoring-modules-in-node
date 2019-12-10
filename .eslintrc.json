@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "@werkzeugkiste",
+    "@werkzeugkiste/eslint-config/node",
+    "@werkzeugkiste/eslint-config/typescript"
+  ]
+}
