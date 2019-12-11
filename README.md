@@ -25,13 +25,14 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 
 1. Node's experimental implementation of ESModules had breaking changes/different behavior between versions `12.11.0` → `12.11.1`, `12.12.0`, `12.13.0` → `12.13.1` when `type` is set to `module` in package.json.
 1. Native ESModules can only be imported in Node if the file that is importing the ESModule is ending on `.mjs` **or** if it is inside of a project that has `"type": "module"` defined in its package.json. In this case `.js` also works.
-1. When importing from a relative ESModule the import path must contain the file suffix (`import add from './add.js'` works while `import add from './add'` does not). This is according to the current spec and matches Browser behavior as far as I know.
+1. When importing from a relative ESModule the ~~import path~~ import identifier must contain the file suffix (`import add from './add.js'` works while `import add from './add'` does not). This is according to the current spec and matches Browser behavior as far as I know.
 1. LOL: when importing `./example/es/index.js` with ESLint with `eslint-plugin-unicorn` and autofix enabled, the `unicorn/import-index` rule automatically shortens the path to `./example/es` making the script fail.
 
-## Related tweets:
+## Related links:
 
 - https://twitter.com/MylesBorins/status/1202686414896300033
 - https://twitter.com/mjackson/status/1202650812159184896
+- https://github.com/graphql/graphql-js/pull/2277
 
 ## Credits
 
