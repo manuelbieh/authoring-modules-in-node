@@ -16,7 +16,7 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 
 ## Things to find out
 
-- Do browsers understand .cjs file endings without explicitly sending a application/javascript header (assumption: they do)
+- Do browsers understand `.cjs` file endings without explicitly sending a application/javascript header (assumption: they do)
 - Does webpack and other bundlers find `.cjs` files without explicit configuration (assumption: as long as the `main` property in package.json points to a `.cjs` file, they do)
 - How do source files need to be built/transpiled so that they can be tree-shaken by webpack et al.?
 - What must happen so that Node can `import` particular ESModules without complaining
