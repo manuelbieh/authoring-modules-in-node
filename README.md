@@ -38,11 +38,13 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 - https://github.com/graphql/graphql-js/pull/2277
 - https://medium.com/@nodejs/announcing-a-new-experimental-modules-1be8d2d6c2ff
 - https://nodejs.org/api/esm.html
+- https://github.com/rollup/rollup/wiki/pkg.module
 
 ## Credits
 
 - [@montogeek](https://twitter.com/montogeek)
 - [@satya164](https://twitter.com/satya164)
+- [@karlhorky](https://twitter.com/karlhorky)
 
 ## Setup
 
