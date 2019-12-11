@@ -5,7 +5,7 @@ module.exports = {
         filename: 'index.js',
         path: `${__dirname}/lib`,
         libraryTarget: 'umd',
-        library: 'example',
+        library: 'ExamplePackageCJS',
         // this is a weird hack to make the umd build work in node
         // https://github.com/webpack/webpack/issues/6525#issuecomment-417580843
         globalObject: 'typeof self !== "undefined" ? self : this',

@@ -1,0 +1,19 @@
+{
+  "name": "demo-app-browser-unbundled",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.12.0"
+  },
+  "dependencies": {
+    "@manuel-bieh/example-package-esm": "latest",
+    "@manuel-bieh/example-package-cjs": "latest"
+  }
+}

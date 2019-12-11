@@ -1,0 +1,10 @@
+{
+  "name": "node-esm-demo-app",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@manuel-bieh/example-package-esm": "latest",
+    "@manuel-bieh/example-package-cjs": "latest"
+  }
+}

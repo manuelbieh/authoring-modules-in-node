@@ -1,11 +1,9 @@
 {
   "name": "authoring-modules-in-node",
   "version": "0.0.0",
-  "main": "index.js",
   "repository": "git@github.com:manuelbieh/authoring-modules-in-node.git",
   "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
@@ -28,6 +26,7 @@
     "eslint-plugin-react-hooks": "2.2.0",
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-unicorn": "12.1.0",
+    "lerna": "^3.19.0",
     "prettier": "1.18.2"
   }
 }

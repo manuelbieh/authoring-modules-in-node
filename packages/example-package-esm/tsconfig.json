@@ -1,0 +1,4 @@
+{
+  "extends": "@werkzeugkiste/tsconfig/base",
+  "include": ["src"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@manuel-bieh/example-package-cjs",
+  "private": true,
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "repository": "git@github.com:manuelbieh/authoring-modules-in-node.git",
+  "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
+  "license": "MIT",
+  "scripts": {
+    "tsc": "tsc --noEmit",
+    "build": "yarn build:esm && yarn build:bundle",
+    "build:esm": "babel --out-dir es --extensions .ts,.js src",
+    "build:bundle": "webpack-cli --config webpack.config.js",
+    "rename-modules": "node scripts/rename-to-mjs.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-typescript": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

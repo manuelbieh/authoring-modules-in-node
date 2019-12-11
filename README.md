@@ -32,3 +32,16 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 
 - https://twitter.com/MylesBorins/status/1202686414896300033
 - https://twitter.com/mjackson/status/1202650812159184896
+
+## Credits
+
+- [@montogeek](https://twitter.com/montogeek)
+- [@satya164](https://twitter.com/satya164)
+
+## Setup
+
+If you wanna try it out yourself:
+
+```
+npx lerna bootstrap --force-local
+```
