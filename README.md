@@ -30,6 +30,7 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 1. LOL: when importing `./example/es/index.js` with ESLint with `eslint-plugin-unicorn` and autofix enabled, the `unicorn/import-index` rule automatically shortens the path to `./example/es` making the script fail.
 1. Unless `"type":"module"` is set in package.json, files need to be named `.mjs` to tell Node it's an ESModule. Babel, however, does not yet support writing file extentions other than `.js`. There's been an [open PR](https://github.com/babel/babel/pull/9144#issuecomment-564542788) to add a new `--out-file-extension` option to `babel-cli` but it hasn't been merged yet. **Update:** [will probably be released with Babel 7.8!](https://github.com/babel/babel/pull/9144#issuecomment-564542788)
 1. There is an [open issue](https://github.com/microsoft/TypeScript/issues/18442) in TypeScript to support writing compiled files with a `.mjs` file-extension.
+1. [@karlhorky](https://twitter.com/karlhorky) pointed me to [babel-esm-plugin](https://github.com/prateekbh/babel-esm-plugin) which looks helpful until [#9144](https://github.com/babel/babel/pull/9144#issuecomment-564542788) is merged. Will investigate.
 
 ## Related links:
 
@@ -45,6 +46,8 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 - [@montogeek](https://twitter.com/montogeek)
 - [@satya164](https://twitter.com/satya164)
 - [@karlhorky](https://twitter.com/karlhorky)
+- [@\_philpl](https://twitter.com/_philpl)
+- [@lukejacksonn](https://twitter.com/lukejacksonn)
 
 ## Setup
 
