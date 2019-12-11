@@ -58,6 +58,8 @@ yarn
 npx lerna bootstrap --force-local
 ```
 
+_More docs on that coming soon_
+
 ## Dictionary
 
 tbd.
