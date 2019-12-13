@@ -1,5 +1,6 @@
 {
   "name": "node-esm-demo-app",
+  "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
   "version": "0.0.0",
   "private": true,
   "type": "module",

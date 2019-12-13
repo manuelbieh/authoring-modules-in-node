@@ -2,15 +2,16 @@
   "name": "@manuel-bieh/example-package-esm",
   "private": true,
   "version": "0.0.0",
-  "main": "lib/index.js",
+  "main": "dist/cjs/index.js",
   "type": "module",
   "repository": "git@github.com:manuelbieh/authoring-modules-in-node.git",
   "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
   "license": "MIT",
   "scripts": {
     "tsc": "tsc --noEmit",
-    "build:esm": "babel --out-dir es --extensions .ts,.js --no-comments src",
-    "build:bundle": "webpack-cli --config webpack.config.js"
+    "build": "yarn build:esm && yarn build:bundle",
+    "build:esm": "babel --out-dir dist/esm --extensions .ts,.js --no-comments src",
+    "build:bundle": "webpack-cli --config webpack.config.cjs"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",

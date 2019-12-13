@@ -3,7 +3,7 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         filename: 'index.js',
-        path: `${__dirname}/lib`,
+        path: `${__dirname}/dist/cjs`,
         libraryTarget: 'umd',
         library: 'ExamplePackageESM',
         // this is a weird hack to make the umd build work in node

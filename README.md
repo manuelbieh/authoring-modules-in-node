@@ -29,8 +29,17 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 1. On the other side, if you do have `"type":"module"` in your package.json, you can use `.cjs` for commonjs modules.
 1. LOL: when importing `./example/es/index.js` with ESLint with `eslint-plugin-unicorn` and autofix enabled, the `unicorn/import-index` rule automatically shortens the path to `./example/es` making the script fail.
 1. Unless `"type":"module"` is set in package.json, files need to be named `.mjs` to tell Node it's an ESModule. Babel, however, does not yet support writing file extentions other than `.js`. There's been an [open PR](https://github.com/babel/babel/pull/9144#issuecomment-564542788) to add a new `--out-file-extension` option to `babel-cli` but it hasn't been merged yet. **Update:** [will probably be released with Babel 7.8!](https://github.com/babel/babel/pull/9144#issuecomment-564542788)
-1. There is an [open issue](https://github.com/microsoft/TypeScript/issues/18442) in TypeScript to support writing compiled files with a `.mjs` file-extension.
+1. That also means that at the time of writing there seems to be **no way to safely generate ES Modules** in Babel without setting `"type":"modules"` for the complete package due to the lack of support for `.mjs` as output file extension.
+1. There is an [open issue](https://github.com/microsoft/TypeScript/issues/18442) in TypeScript to support writing compiled files with a `.mjs` file-extension. Until this is done, there's also no safe support for `.mjs` as indicator for ES Modules.
 1. [@karlhorky](https://twitter.com/karlhorky) pointed me to [babel-esm-plugin](https://github.com/prateekbh/babel-esm-plugin) which looks helpful until [#9144](https://github.com/babel/babel/pull/9144#issuecomment-564542788) is merged. Will investigate.
+1. VSCode 1.40.2 (and probably other editors and IDEs) do not treat `.cjs` files as JavaScript but use `plaintext` instead. This can be configured by setting:
+   ```
+   "files.associations": {
+     "*.cjs": "javascript"
+   }
+   ```
+   `.mjs` however, is correctly detected as JavaScript.
+1. Once `"type":"module"` is set, you can't use `.babelrc.js` or `webpack.config.js` anymore but you must stricly use `.cjs` and rename them `.babelrc.cjs` and `webpack.config.cjs`. That is because `@babel/core` is still using `require()` to load config files. However, Babel looks for the existence of a `.babelrc.cjs` file automatically ([source](https://github.com/babel/babel/blob/master/packages/babel-core/src/config/files/configuration.js#L26)). Webpack does not. You have to add `--config webppack.config.cjs` explicitly.
 
 ## Related links:
 
@@ -40,6 +49,9 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 - https://medium.com/@nodejs/announcing-a-new-experimental-modules-1be8d2d6c2ff
 - https://nodejs.org/api/esm.html
 - https://github.com/rollup/rollup/wiki/pkg.module
+- https://github.com/parcel-bundler/parcel/pull/3545
+- https://twitter.com/wesbos/status/1205159427491414017
+- https://github.com/vanillaes
 
 ## Credits
 
@@ -48,6 +60,7 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
 - [@karlhorky](https://twitter.com/karlhorky)
 - [@\_philpl](https://twitter.com/_philpl)
 - [@lukejacksonn](https://twitter.com/lukejacksonn)
+- [@evanplaice](https://twitter.com/evanplaice)
 
 ## Setup
 
