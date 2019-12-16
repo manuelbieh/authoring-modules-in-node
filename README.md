@@ -40,6 +40,7 @@ The main reason for this investigation is a [(still unresolved) issue](https://g
    ```
    `.mjs` however, is correctly detected as JavaScript.
 1. Once `"type":"module"` is set, you can't use `.babelrc.js` or `webpack.config.js` anymore but you must stricly use `.cjs` and rename them `.babelrc.cjs` and `webpack.config.cjs`. That is because `@babel/core` is still using `require()` to load config files. However, Babel looks for the existence of a `.babelrc.cjs` file automatically ([source](https://github.com/babel/babel/blob/master/packages/babel-core/src/config/files/configuration.js#L26)). Webpack does not. You have to add `--config webppack.config.cjs` explicitly.
+1. There is a new `exports` property in `package.json` for Node. It is a map containing aliases to tell Node where to look for imports. See [Node docs on ECMAScript Modules](https://nodejs.org/api/esm.html#esm_package_exports) for more info.
 
 ## Related links:
 

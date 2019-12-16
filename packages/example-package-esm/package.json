@@ -10,13 +10,15 @@
   "scripts": {
     "tsc": "tsc --noEmit",
     "build": "yarn build:esm && yarn build:bundle",
-    "build:esm": "babel --out-dir dist/esm --extensions .ts,.js --no-comments src",
+    "build:esm": "babel --delete-dir-on-start --env-name=modern --out-dir dist/esm --extensions .ts,.js --no-comments src",
     "build:bundle": "webpack-cli --config webpack.config.cjs"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
+    "@babel/preset-modules": "^0.1.1",
     "@babel/preset-typescript": "^7.7.4",
     "babel-loader": "^8.0.6",
     "typescript": "^3.7.3",

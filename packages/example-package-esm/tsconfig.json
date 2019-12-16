@@ -1,4 +1,7 @@
 {
   "extends": "@werkzeugkiste/tsconfig/base",
+  "compilerOptions": {
+    "isolatedModules": false
+  },
   "include": ["src"]
 }
